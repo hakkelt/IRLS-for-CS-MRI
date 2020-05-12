@@ -1,6 +1,7 @@
 [deps]
 AbstractOperators = "d9c5613a-d543-52d8-9afd-8f241a8c3f1c"
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+CuArrays = "3a865a2d-5b23-5a0f-bc46-62713ec82fae"
 EllipsisNotation = "da5c29d0-fa7d-589e-88eb-ea29b0a81949"
 FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
 FunctionOperators = "98ce4118-165c-488a-9b71-2bb5aff4e594"
