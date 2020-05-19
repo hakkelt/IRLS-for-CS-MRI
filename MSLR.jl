@@ -394,7 +394,7 @@ function MultiScaleLowRank(
         coord::AbstractArray,                   # sampling mask
         mps::AbstractArray;                     # sensitivity maps
         img_size::NTuple = size(Xᴳᵀ),           # size of output matrix
-        block_widths::NTuple = (1, 32, 64, 128),# block sizes
+        block_widths::NTuple = (32, 64, 128),# block sizes
         α::Real = 1,                            # step size
         β::Real = 0.5,                          # decay for step size
         λ::Real = 1e-8,                         # scaling factor for Lagrangian multiplier

@@ -137,6 +137,7 @@ function HM_IRLS(
     cost_vec = OffsetVector{real(dType)}(undef, 0:N)
     rank_vec = OffsetVector{Int}(undef, 0:N)
     time_vec = OffsetVector{Float64}(undef, 0:N)
+    fill!(cost_vec, -1), fill!(rank_vec, -1), fill!(time_vec, -1)
     time_vec[0] = 0
 
     cost_vec[0] = norm(tempᵈ¹ˣᵈ² .= Xᴳᵀ .-  Xᵏ)
@@ -185,6 +186,9 @@ function HM_IRLS(
         rank_vec[k] = sum(Int, σ .> rank_rtol)
         verbose && iterationPrint("k" => k, "rank(Xᵏ)" => rank_vec[k],
                 "‖Xᴳᵀ - Xᵏ‖₂" => cost_vec[k], "σ₁" => σ[1], "ϵᵏ" => ϵᵏ)
+        if cost_vec[k] > cost_vec[0]
+            break
+        end
         
     end
     
